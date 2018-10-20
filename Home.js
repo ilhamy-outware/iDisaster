@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Images from './constants/Images';
+import DisasterType from './constants/DisasterType';
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -26,57 +27,99 @@ export default class Home extends Component<Props> {
         return (
             <View style={styles.container}>
                     <View style={styles.tileContainer}>
-                        <TouchableOpacity style={{...styles.leftTile, backgroundColor: '#2e448c'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.tsunami,
+                              });
+                          }}
+                          style={{...styles.leftTile, backgroundColor: '#2e448c'}}>
                             <Text style={styles.tileText}>Tsunami</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.tsunami}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.tsunami}
+                                />
+                            </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{...styles.rightTile, backgroundColor: '#89040c'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.volcano,
+                              });
+                          }}
+                          style={{...styles.rightTile, backgroundColor: '#89040c'}}>
                             <Text style={styles.tileText}>Volcano</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.volcano}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.volcano}
+                                />
+                            </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.tileContainer}>
-                        <TouchableOpacity style={{...styles.leftTile, backgroundColor: '#f79712'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.earthquake,
+                              });
+                          }}
+                          style={{...styles.leftTile, backgroundColor: '#f79712'}}>
                             <Text style={styles.tileText}>Earthquake</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.earthquake}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.earthquake}
+                                />
+                            </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{...styles.rightTile, backgroundColor: '#05687d'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.flood,
+                              });
+                          }}
+                          style={{...styles.rightTile, backgroundColor: '#05687d'}}>
                             <Text style={styles.tileText}>Flood</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.flood}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.flood}
+                                />
+                            </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.tileContainer}>
-                        <TouchableOpacity style={{...styles.leftTile, backgroundColor: '#ad3d05'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.wildfire,
+                              });
+                          }}
+                          style={{...styles.leftTile, backgroundColor: '#ad3d05'}}>
                             <Text style={styles.tileText}>Wildfire</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.wildfire}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.wildfire}
+                                />
+                            </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{...styles.rightTile, backgroundColor: '#4a6577'}}>
+                        <TouchableOpacity
+                          onPress={() => {
+                              this.props.navigation.navigate('Disaster', {
+                                disasterType: DisasterType.tornado,
+                              });
+                          }}
+                          style={{...styles.rightTile, backgroundColor: '#4a6577'}}>
                             <Text style={styles.tileText}>Tornado</Text>
-                            <Image
-                                resizeMode={'center'}
-                                style={styles.image}
-                                source={Images.home.tornado}
-                            />
+                            <View style={styles.imageContainer}>
+                                <Image
+                                    style={styles.image}
+                                    source={Images.home.tornado}
+                                />
+                            </View>
                         </TouchableOpacity>
                     </View>
             </View>
@@ -103,11 +146,16 @@ const styles = StyleSheet.create({
         marginRight: 15,
         height: 162,
         backgroundColor: 'blue',
+        borderRadius: 10,
     },
     rightTile: {
         flex: 1,
         height: 162,
         backgroundColor: 'red',
+        borderRadius: 10,
+    },
+    imageContainer: {
+        flex: 1,
     },
     tileText: {
         fontSize: 24,
@@ -117,7 +165,14 @@ const styles = StyleSheet.create({
         marginLeft: 15,
     },
     image: {
-        width: 100,
-        height: 100,
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'contain',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
     }
 });
