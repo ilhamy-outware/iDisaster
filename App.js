@@ -11,6 +11,7 @@ import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Home from './Home';
 import Disaster from './Disaster';
+import List from './List';
 
 StatusBar.setBarStyle('light-content', true);
 
@@ -22,9 +23,12 @@ const RootStack = StackNavigator(
     Disaster: {
       screen: Disaster,
     },
+    List: {
+      screen: List,
+    },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'List',
   }
 );
 

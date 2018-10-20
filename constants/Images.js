@@ -7,6 +7,9 @@ const images = {
         wildfire: require('./../assets/images/wildfire.png'),
         tornado: require('./../assets/images/tornado.png'),
     },
+    list: {
+        checked: require('./../assets/images/checked.png'),
+    },
 };
 
 export default images;
