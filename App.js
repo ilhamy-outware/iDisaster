@@ -11,7 +11,8 @@ import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Home from './Home';
 import Disaster from './Disaster';
-import List from './List';
+import Preparation from './Preparation';
+import ToDo from './ToDo';
 
 StatusBar.setBarStyle('light-content', true);
 
@@ -23,12 +24,23 @@ const RootStack = StackNavigator(
     Disaster: {
       screen: Disaster,
     },
-    List: {
-      screen: List,
+    Preparation: {
+      screen: Preparation,
+    },
+    ToDo: {
+      screen: ToDo,
+      navigationOptions: {
+          title: 'What to do',
+          headerStyle: {
+            backgroundColor: '#363636',
+          },
+          headerTitleStyle: {},
+          headerTintColor: '#fff',
+      }
     },
   },
   {
-    initialRouteName: 'List',
+    initialRouteName: 'Home',
   }
 );
 

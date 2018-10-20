@@ -145,13 +145,11 @@ const styles = StyleSheet.create({
         flex: 1,
         marginRight: 15,
         height: 162,
-        backgroundColor: 'blue',
         borderRadius: 10,
     },
     rightTile: {
         flex: 1,
         height: 162,
-        backgroundColor: 'red',
         borderRadius: 10,
     },
     imageContainer: {

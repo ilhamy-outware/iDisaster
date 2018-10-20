@@ -9,6 +9,7 @@ const images = {
     },
     list: {
         checked: require('./../assets/images/checked.png'),
+        remove: require('./../assets/images/remove.png'),
     },
 };
 
