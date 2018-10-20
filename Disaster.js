@@ -52,7 +52,7 @@ export default class Home extends Component<Props> {
                           disasterType,
                         });
                     }}
-                    style={{...styles.button, backgroundColor: '#89040c'}}>
+                    style={{...styles.button, backgroundColor: '#608653'}}>
                       <Text style={styles.buttonText}>{'What to prepare'}</Text>
                   </TouchableOpacity>
               </View>

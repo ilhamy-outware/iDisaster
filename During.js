@@ -7,12 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, FlatList} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image, FlatList, Modal} from 'react-native';
 import Images from './constants/Images';
 import DisasterData from './assets/data/DisasterData';
 import SelectableCell from './SelectableCell';
 import {connect} from 'react-redux';
 import Actions from './actions';
+import AddModal from './modal/AddModal';
 
 type Props = {};
 class During extends Component<Props> {
@@ -20,6 +21,7 @@ class During extends Component<Props> {
         super(props);
         this.state = {
             edit: false,
+            addModalVisible: false,
         }
     }
 
@@ -32,14 +34,15 @@ class During extends Component<Props> {
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button}
                     onPress={() => {
+                        this.setState({edit: !this.state.edit});
                     }}>
-                    <Text style={styles.buttonText}>{'Add'}</Text>
+                    <Text style={styles.buttonText}>{this.state.edit ? 'Cancel' : 'Delete'}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}
                     onPress={() => {
-                        this.setState({edit: !this.state.edit});
+                        this.setState({addModalVisible: true});
                     }}>
-                    <Text style={styles.buttonText}>{this.state.edit ? 'Cancel' : 'Edit'}</Text>
+                    <Text style={styles.buttonText}>{'Add'}</Text>
                 </TouchableOpacity>
             </View>
             <Text style={styles.titleText}>{'Do the following:'}</Text>
@@ -56,6 +59,19 @@ class During extends Component<Props> {
                     edit={this.state.edit}/>
                 }
             />
+            <Modal
+                animationType={"slide"}
+                transparent={true}
+                visible={this.state.addModalVisible}>
+                <AddModal
+                onAdd={(description) => {
+                    this.setState({addModalVisible: false});
+                    this.props.addDuring(disasterType, description);
+                }}
+                onCancel={() => {
+                    this.setState({addModalVisible: false});
+                }}/>
+            </Modal>
         </View>
       );
     }
@@ -73,6 +89,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeDuring : (disasterType, index) => {
       dispatch(Actions.removeDuring(disasterType, index));
+    },
+    addDuring : (disasterType, description) => {
+      dispatch(Actions.addDuring(disasterType, description));
     },
   }
 }

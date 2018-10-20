@@ -115,6 +115,42 @@ export default function disasterReducer(state = initialState, action = {}) {
               ...state,
               ...data,
             };
+        case ActionTypes.ADD_PREPARATION:
+            var {disasterType, description} = action.payload;
+            var data = {};
+            data[disasterType] = _.cloneDeep(state[disasterType]);
+            data[disasterType].preparation.push({selected: false, description});
+            return {
+              ...state,
+              ...data,
+            };
+        case ActionTypes.ADD_BEFORE:
+            var {disasterType, description} = action.payload;
+            var data = {};
+            data[disasterType] = _.cloneDeep(state[disasterType]);
+            data[disasterType].before.push({selected: false, description});
+            return {
+              ...state,
+              ...data,
+            };
+        case ActionTypes.ADD_DURING:
+            var {disasterType, description} = action.payload;
+            var data = {};
+            data[disasterType] = _.cloneDeep(state[disasterType]);
+            data[disasterType].during.push({selected: false, description});
+            return {
+              ...state,
+              ...data,
+            };
+        case ActionTypes.ADD_AFTER:
+            var {disasterType, description} = action.payload;
+            var data = {};
+            data[disasterType] = _.cloneDeep(state[disasterType]);
+            data[disasterType].after.push({selected: false, description});
+            return {
+              ...state,
+              ...data,
+            };
         default:
             return state;
     }
