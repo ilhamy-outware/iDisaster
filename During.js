@@ -26,12 +26,12 @@ class During extends Component<Props> {
     }
 
     render() {
-      const { disasterType } = this.props.disaster;
+      const { disasterType, warning } = this.props.disaster;
       const disasterData = this.props.disaster[disasterType].during;
 
       return (
         <View style={styles.container}>
-            <View style={styles.buttonsContainer}>
+            {!warning ? <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button}
                     onPress={() => {
                         this.setState({edit: !this.state.edit});
@@ -44,7 +44,13 @@ class During extends Component<Props> {
                     }}>
                     <Text style={styles.buttonText}>{'Add'}</Text>
                 </TouchableOpacity>
-            </View>
+            </View> : null}
+            {warning ? <View style={styles.imageContainer}>
+                <Image
+                    style={styles.image}
+                    source={Images.map}
+                />
+            </View> : null}
             <Text style={styles.titleText}>{'Do the following:'}</Text>
             <FlatList
                 style={styles.list}
@@ -132,5 +138,21 @@ const styles = StyleSheet.create({
     },
     list: {
         flex: 1,
+    },
+    imageContainer: {
+        height: 200,
+        marginHorizontal: 30,
+        marginTop: 15,
+    },
+    image: {
+        flex: 1,
+        width: null,
+        height: null,
+        resizeMode: 'contain',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
     },
 });

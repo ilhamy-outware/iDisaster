@@ -11,6 +11,8 @@ const images = {
         checked: require('./../assets/images/checked.png'),
         remove: require('./../assets/images/remove.png'),
     },
+    map: require('./../assets/images/map.png'),
+    danger: require('./../assets/images/danger.png'),
 };
 
 export default images;

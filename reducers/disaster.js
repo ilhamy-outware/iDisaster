@@ -40,6 +40,7 @@ const initialState = {
     after: _.map(DisasterData.flood.after, o => {return {selected: false, description: o}}),
   },
   disasterType: null,
+  warning: false,
 };
 
 export default function disasterReducer(state = initialState, action = {}) {
@@ -157,6 +158,12 @@ export default function disasterReducer(state = initialState, action = {}) {
             return {
               ...state,
               disasterType,
+            };
+        case ActionTypes.SET_WARNING:
+            var {warning} = action.payload;
+            return {
+              ...state,
+              warning,
             };
         default:
             return state;

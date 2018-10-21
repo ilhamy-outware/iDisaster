@@ -12,9 +12,11 @@ import Images from './constants/Images';
 import DisasterData from './assets/data/DisasterData';
 import { NavigationActions } from 'react-navigation';
 import ToDo from './ToDo';
+import {connect} from 'react-redux';
+import Actions from './actions';
 
 type Props = {};
-export default class Home extends Component<Props> {
+class Disaster extends Component<Props> {
 
     static navigationOptions = ({ navigation }) => ({
         title: DisasterData[navigation.state.params.disasterType].name,
@@ -41,6 +43,7 @@ export default class Home extends Component<Props> {
                   </View>
                   <TouchableOpacity
                     onPress={() => {
+                        this.props.setWarning(false);
                         this.props.navigation.navigate('ToDo');
                     }}
                     style={{...styles.button, backgroundColor: '#2e448c'}}>
@@ -58,6 +61,18 @@ export default class Home extends Component<Props> {
         );
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setWarning : (warning) => {
+      dispatch(Actions.setWarning(warning));
+    },
+  }
+}
+export default connect(
+    null,
+    mapDispatchToProps,
+)(Disaster);
 
 const styles = StyleSheet.create({
     container: {

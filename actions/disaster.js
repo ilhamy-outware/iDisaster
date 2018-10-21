@@ -90,3 +90,10 @@ export const setDisasterType = (disasterType) => (dispatch) => {
       payload: {disasterType}
   });
 }
+
+export const setWarning = (warning) => (dispatch) => {
+  dispatch({
+      type : ActionTypes.SET_WARNING,
+      payload: {warning}
+  });
+}

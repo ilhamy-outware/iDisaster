@@ -26,12 +26,12 @@ class After extends Component<Props> {
     }
 
     render() {
-      const { disasterType } = this.props.disaster;
+      const { disasterType, warning } = this.props.disaster;
       const disasterData = this.props.disaster[disasterType].after;
 
       return (
         <View style={styles.container}>
-            <View style={styles.buttonsContainer}>
+            {!warning ? <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button}
                     onPress={() => {
                         this.setState({edit: !this.state.edit});
@@ -44,7 +44,15 @@ class After extends Component<Props> {
                     }}>
                     <Text style={styles.buttonText}>{'Add'}</Text>
                 </TouchableOpacity>
-            </View>
+            </View> : null}
+            {warning ? <View style={styles.okButtonContainer}>
+                <TouchableOpacity style={styles.okButton}
+                    onPress={() => {
+                        this.setState({addModalVisible: true});
+                    }}>
+                    <Text style={styles.buttonText}>{'I AM OKAY'}</Text>
+                </TouchableOpacity>
+            </View> : null}
             <Text style={styles.titleText}>{'Do the following:'}</Text>
             <FlatList
                 style={styles.list}
@@ -121,6 +129,24 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 18,
         color: '#fff',
+        alignItems: 'center',
+    },
+    okButtonContainer: {
+      height: 40,
+      marginTop: 30,
+      marginBottom: 15,
+      marginRight: 15,
+      marginLeft: 15,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    okButton: {
+        height: 50,
+        width: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#608653',
+        borderRadius: 10,
     },
     titleText: {
         fontSize: 34,
