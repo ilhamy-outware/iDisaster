@@ -168,10 +168,10 @@ export default {
         "Protect your property. Move valuables to higher levels. Declutter drains and gutters. Install check valves. Consider a sump pump with a battery."
       ],
       "during": [
-        "Get Your emergency supply kit.",
-        "Find safe shelter right away by going to higher ground, eg roof or or move 2nd floor",
-        "Don't Use Electricity",
-        "Don't Try to swim or move away, there is no safe way where you can go",
+        "Get your emergency supply kit",
+        "Find safe shelter right away by going to higher ground, e.g. roof or move 2nd floor",
+        "Don't use electricity",
+        "Don't try to swim or move away, there is no safe way where you can go",
         "There is emergency crew nearby, prepare to evacuate",
         "when you have been rescued and are in a safe area, move to next step After"
       ],
