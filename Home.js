@@ -31,6 +31,7 @@ class Home extends Component<Props> {
                     <View style={styles.tileContainer}>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.tsunami);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.tsunami,
                               });
@@ -46,6 +47,7 @@ class Home extends Component<Props> {
                         </TouchableOpacity>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.volcano);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.volcano,
                               });
