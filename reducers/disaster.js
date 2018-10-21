@@ -39,6 +39,7 @@ const initialState = {
     during: _.map(DisasterData.flood.during, o => {return {selected: false, description: o}}),
     after: _.map(DisasterData.flood.after, o => {return {selected: false, description: o}}),
   },
+  disasterType: null,
 };
 
 export default function disasterReducer(state = initialState, action = {}) {
@@ -150,6 +151,12 @@ export default function disasterReducer(state = initialState, action = {}) {
             return {
               ...state,
               ...data,
+            };
+        case ActionTypes.SET_DISASTER_TYPE:
+            var {disasterType} = action.payload;
+            return {
+              ...state,
+              disasterType,
             };
         default:
             return state;

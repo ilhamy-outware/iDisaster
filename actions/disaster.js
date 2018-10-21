@@ -83,3 +83,10 @@ export const addAfter = (disasterType, description) => (dispatch) => {
       payload: {disasterType, description}
   });
 }
+
+export const setDisasterType = (disasterType) => (dispatch) => {
+  dispatch({
+      type : ActionTypes.SET_DISASTER_TYPE,
+      payload: {disasterType}
+  });
+}

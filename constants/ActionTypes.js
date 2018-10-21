@@ -11,6 +11,7 @@ const actionTypes = {
   REMOVE_BEFORE: 'REMOVE_BEFORE',
   REMOVE_DURING: 'REMOVE_DURING',
   REMOVE_AFTER: 'REMOVE_AFTER',
+  SET_DISASTER_TYPE: 'SET_DISASTER_TYPE',
 };
 
 export default actionTypes;

@@ -38,7 +38,7 @@ export default {
         },
     tsunami: {
             name: "Tsunami",
-            "description: ": "A tsunami can kill or injure people and damage or destroy buildings and infrastructure as waves come in and go out. A tsunami is a series of enormous ocean waves caused by earthquakes, underwater landslides, volcanic eruptions, or asteroids. Tsunamis can: Cause flooding and disrupt transportation, power, communications, and the water supply.",
+            "description": "A tsunami can kill or injure people and damage or destroy buildings and infrastructure as waves come in and go out. A tsunami is a series of enormous ocean waves caused by earthquakes, underwater landslides, volcanic eruptions, or asteroids. Tsunamis can: Cause flooding and disrupt transportation, power, communications, and the water supply.",
             "preparation": [
               "First, protect yourself from an Earthquake. Drop, Cover, then Hold On.",
               "Get to high ground as far inland as possible.",
@@ -74,7 +74,7 @@ export default {
     },
     wildfire: {
             name: "Wildfire",
-            "description: ": "Wildfires can ruin homes and cause injuries or death to people and animals. A wildfire is an unplanned fire that burns in a natural area such as a forest, grassland, or prairie. Wildfires can: Often be caused by humans or lightning, Cause flooding or disrupt transportation, gas, power, and communications, Happen anywhere, anytime. Risk increases with in periods of little rain and high winds.",
+            "description": "Wildfires can ruin homes and cause injuries or death to people and animals. A wildfire is an unplanned fire that burns in a natural area such as a forest, grassland, or prairie. Wildfires can: Often be caused by humans or lightning, Cause flooding or disrupt transportation, gas, power, and communications, Happen anywhere, anytime. Risk increases with in periods of little rain and high winds.",
             "preparation": [
               "GET TO SAFETY RIGHT AWAY",
               "Leave if told to do so.",
@@ -111,7 +111,7 @@ export default {
     },
     earthquake: {
             name: "Earthquake",
-            "description: ": "An earthquake is the sudden, rapid shaking of the earth, caused by the breaking and shifting of underground rock. Earthquakes can cause buildings to collapse and cause heavy items to fall, resulting in injuries and property damage. Earthquakes can: Happen without warning; Cause fires and damage roads and Cause tsunamis, landslides, and avalanches.",
+            "description": "An earthquake is the sudden, rapid shaking of the earth, caused by the breaking and shifting of underground rock. Earthquakes can cause buildings to collapse and cause heavy items to fall, resulting in injuries and property damage. Earthquakes can: Happen without warning; Cause fires and damage roads and Cause tsunamis, landslides, and avalanches.",
             "preparation": [
               "Protect yourself right away. Drop, Cover, then Hold On!",
               "If in a vehicle, pull over and stop.",
@@ -150,7 +150,7 @@ export default {
     },
     flood: {
       "name": "Flood",
-      "description: ": "Failing to evacuate flooded areas, entering flood waters, or remaining after a flood has passed can result in injury or death. Flooding is a temporary overflow of water onto land that is normally dry. Floods are the most common natural disaster in the United States. Floods may: Result from rain, snow, coastal storms, storm surges, and overflows of dams and other water systems.Develop slowly or quickly – Flash floods can come with no warning.Cause outages, disrupt transportation, damage buildings, and create landslides.",
+      "description": "Failing to evacuate flooded areas, entering flood waters, or remaining after a flood has passed can result in injury or death. Flooding is a temporary overflow of water onto land that is normally dry. Floods are the most common natural disaster in the United States. Floods may: Result from rain, snow, coastal storms, storm surges, and overflows of dams and other water systems.Develop slowly or quickly – Flash floods can come with no warning.Cause outages, disrupt transportation, damage buildings, and create landslides.",
       "preparation": [
         "FIND SAFE SHELTER RIGHT AWAY",
         "Do not walk, swim, or drive through flood waters. Turn Around, Don’t Drown!",
@@ -187,7 +187,7 @@ export default {
     },
     volcano: {
             name: "Volcano",
-            "description: ": "A volcano is an opening in the Earth’s crust that allows molten rock, gases, and debris to escape to the surface. A volcanic eruption may involve lava and other debris. A volcanic eruption can: Contaminate water supplies, Damage machinery, Reduce visibility through smog and harmful gases that may threaten low-lying areas and make it hard to breathe and irritate the skin, eyes, nose, and throat. ",
+            "description": "A volcano is an opening in the Earth’s crust that allows molten rock, gases, and debris to escape to the surface. A volcanic eruption may involve lava and other debris. A volcanic eruption can: Contaminate water supplies, Damage machinery, Reduce visibility through smog and harmful gases that may threaten low-lying areas and make it hard to breathe and irritate the skin, eyes, nose, and throat. ",
             "preparation": [
               "Listen for emergency information and alerts.",
               "Follow evacuation or shelter orders. If advised to evacuate, then do so early.",

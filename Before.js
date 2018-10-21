@@ -26,7 +26,7 @@ class Before extends Component<Props> {
     }
 
     render() {
-        const { disasterType } = this.props.navigation.state.params;
+        const { disasterType } = this.props.disaster;
         const disasterData = this.props.disaster[disasterType].before;
 
         return (

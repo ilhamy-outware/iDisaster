@@ -10,6 +10,8 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Images from './constants/Images';
 import DisasterData from './assets/data/DisasterData';
+import { NavigationActions } from 'react-navigation';
+import ToDo from './ToDo';
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -39,18 +41,14 @@ export default class Home extends Component<Props> {
                   </View>
                   <TouchableOpacity
                     onPress={() => {
-                        this.props.navigation.navigate('ToDo', {
-                          disasterType,
-                        });
+                        this.props.navigation.navigate('ToDo');
                     }}
                     style={{...styles.button, backgroundColor: '#2e448c'}}>
                       <Text style={styles.buttonText}>{'What to do'}</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={() => {
-                        this.props.navigation.navigate('Preparation', {
-                          disasterType,
-                        });
+                        this.props.navigation.navigate('Preparation');
                     }}
                     style={{...styles.button, backgroundColor: '#608653'}}>
                       <Text style={styles.buttonText}>{'What to prepare'}</Text>

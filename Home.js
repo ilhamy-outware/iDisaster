@@ -10,9 +10,11 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, ScrollView, TouchableOpacity, Image} from 'react-native';
 import Images from './constants/Images';
 import DisasterType from './constants/DisasterType';
+import {connect} from 'react-redux';
+import Actions from './actions';
 
 type Props = {};
-export default class Home extends Component<Props> {
+class Home extends Component<Props> {
 
     static navigationOptions = {
         title: 'Choose your disaster',
@@ -61,6 +63,7 @@ export default class Home extends Component<Props> {
                     <View style={styles.tileContainer}>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.earthquake);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.earthquake,
                               });
@@ -76,6 +79,7 @@ export default class Home extends Component<Props> {
                         </TouchableOpacity>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.flood);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.flood,
                               });
@@ -93,6 +97,7 @@ export default class Home extends Component<Props> {
                     <View style={styles.tileContainer}>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.wildfire);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.wildfire,
                               });
@@ -108,6 +113,7 @@ export default class Home extends Component<Props> {
                         </TouchableOpacity>
                         <TouchableOpacity
                           onPress={() => {
+                              this.props.setDisasterType(DisasterType.tornado);
                               this.props.navigation.navigate('Disaster', {
                                 disasterType: DisasterType.tornado,
                               });
@@ -126,6 +132,24 @@ export default class Home extends Component<Props> {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+  let {disaster} = state;
+  return { disaster };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setDisasterType : (disasterType) => {
+      dispatch(Actions.setDisasterType(disasterType));
+    },
+  }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(Home);
 
 const styles = StyleSheet.create({
     container: {
