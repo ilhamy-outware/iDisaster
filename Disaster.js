@@ -103,12 +103,12 @@ const styles = StyleSheet.create({
         height: 100,
         borderRadius: 10,
         marginBottom: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonText: {
         fontSize: 24,
         fontWeight: 'bold',
         color: '#fff',
-        marginTop: 15,
-        marginLeft: 15,
     }
 });

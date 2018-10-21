@@ -17,7 +17,7 @@ type Props = {};
 class Home extends Component<Props> {
 
     static navigationOptions = {
-        title: 'Choose your disaster',
+        title: 'iDisaster',
         headerStyle: {
           backgroundColor: '#363636',
         },

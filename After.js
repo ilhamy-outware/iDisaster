@@ -50,7 +50,7 @@ class After extends Component<Props> {
                     onPress={() => {
                         this.setState({addModalVisible: true});
                     }}>
-                    <Text style={styles.buttonText}>{'I AM OKAY'}</Text>
+                    <Text style={styles.okButtonText}>{'I AM OKAY'}</Text>
                 </TouchableOpacity>
             </View> : null}
             <Text style={styles.titleText}>{'Do the following:'}</Text>
@@ -141,12 +141,17 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     okButton: {
-        height: 50,
+        height: 70,
         width: 300,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#608653',
         borderRadius: 10,
+    },
+    okButtonText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#fff',
     },
     titleText: {
         fontSize: 34,
