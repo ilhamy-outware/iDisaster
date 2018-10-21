@@ -29,7 +29,7 @@ class Home extends Component<Props> {
         super(props);
 
         this.state = {
-            showWarning: false,
+            showWarning: true,
         }
     }
 

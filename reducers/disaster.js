@@ -1,5 +1,6 @@
 import ActionTypes from './../constants/ActionTypes';
 import DisasterData from './../assets/data/DisasterData';
+import WarningDisasterData from './../assets/data/WarningDisasterData';
 import _ from 'lodash';
 
 const initialState = {
@@ -43,7 +44,48 @@ const initialState = {
   warning: false,
 };
 
-export default function disasterReducer(state = initialState, action = {}) {
+const initialWarningState = {
+  volcano: {
+    preparation: _.map(WarningDisasterData.volcano.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.volcano.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.volcano.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.volcano.after, o => {return {selected: false, description: o}}),
+  },
+  tornado: {
+    preparation: _.map(WarningDisasterData.tornado.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.tornado.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.tornado.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.tornado.after, o => {return {selected: false, description: o}}),
+  },
+  tsunami: {
+    preparation: _.map(WarningDisasterData.tsunami.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.tsunami.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.tsunami.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.tsunami.after, o => {return {selected: false, description: o}}),
+  },
+  wildfire: {
+    preparation: _.map(WarningDisasterData.wildfire.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.wildfire.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.wildfire.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.wildfire.after, o => {return {selected: false, description: o}}),
+  },
+  earthquake: {
+    preparation: _.map(WarningDisasterData.earthquake.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.earthquake.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.earthquake.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.earthquake.after, o => {return {selected: false, description: o}}),
+  },
+  flood: {
+    preparation: _.map(WarningDisasterData.flood.preparation, o => {return {selected: false, description: o}}),
+    before: _.map(WarningDisasterData.flood.before, o => {return {selected: false, description: o}}),
+    during: _.map(WarningDisasterData.flood.during, o => {return {selected: false, description: o}}),
+    after: _.map(WarningDisasterData.flood.after, o => {return {selected: false, description: o}}),
+  },
+  disasterType: null,
+  warning: false,
+};
+
+export default function disasterReducer(state = initialWarningState, action = {}) {
     switch (action.type) {
         case ActionTypes.SELECT_PREPARATION:
             var {disasterType, index} = action.payload;
