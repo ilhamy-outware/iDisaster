@@ -48,7 +48,6 @@ class After extends Component<Props> {
             {warning ? <View style={styles.okButtonContainer}>
                 <TouchableOpacity style={styles.okButton}
                     onPress={() => {
-                        this.setState({addModalVisible: true});
                     }}>
                     <Text style={styles.okButtonText}>{'I AM OKAY'}</Text>
                 </TouchableOpacity>
